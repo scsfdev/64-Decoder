@@ -1,28 +1,12 @@
-﻿/*
-  In App.xaml:
-  <Application.Resources>
-      <vm:ViewModelLocatorTemplate xmlns:vm="clr-namespace:_64_Decoder.ViewModel"
-                                   x:Key="Locator" />
-  </Application.Resources>
-  
-  In the View:
-  DataContext="{Binding Source={StaticResource Locator}, Path=ViewModelName}"
-*/
-
+﻿
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
-using Microsoft.Practices.ServiceLocation;
 using _64_Decoder.Model;
+using CommonServiceLocator;
 
 namespace _64_Decoder.ViewModel
 {
-    /// <summary>
-    /// This class contains static references to all the view models in the
-    /// application and provides an entry point for the bindings.
-    /// <para>
-    /// See http://www.mvvmlight.net
-    /// </para>
-    /// </summary>
+    
     public class ViewModelLocator
     {
         static ViewModelLocator()
@@ -41,9 +25,7 @@ namespace _64_Decoder.ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
         }
 
-        /// <summary>
-        /// Gets the Main property.
-        /// </summary>
+       
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
             "CA1822:MarkMembersAsStatic",
             Justification = "This non-static member is needed for data binding purposes.")]
