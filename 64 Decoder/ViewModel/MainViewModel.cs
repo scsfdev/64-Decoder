@@ -60,7 +60,7 @@ namespace _64_Decoder.ViewModel
 
         #endregion
 
-        
+        private string ext = "JAR";        
 
         //public override void Cleanup()
         //{
@@ -117,7 +117,7 @@ namespace _64_Decoder.ViewModel
                 CheckFileExists = true,
                 CheckPathExists = true,
                 Multiselect = false,
-                Filter = "DLL|*.dll",
+                Filter = "jar|*.jar",
 
                 InitialDirectory = @"C:\"
             };
@@ -170,7 +170,7 @@ namespace _64_Decoder.ViewModel
 
         private void GetDropContent(string dropFilePath)
         {
-            if (!string.IsNullOrEmpty(dropFilePath) && File.Exists(dropFilePath) && dropFilePath.ToUpper().EndsWith("DLL"))
+            if (!string.IsNullOrEmpty(dropFilePath) && File.Exists(dropFilePath) && dropFilePath.ToUpper().EndsWith(ext))
             {
                 EncryptFile = dropFilePath;
                 ReadContents();
@@ -187,7 +187,7 @@ namespace _64_Decoder.ViewModel
             SaveReady = false;
             try
             {
-                if (string.IsNullOrEmpty(encryptFile) || !File.Exists(encryptFile) || !encryptFile.ToUpper().EndsWith("DLL"))
+                if (string.IsNullOrEmpty(encryptFile) || !File.Exists(encryptFile) || !encryptFile.ToUpper().EndsWith(ext))
                 {
                     Reset();
                 }

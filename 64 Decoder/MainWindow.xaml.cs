@@ -67,7 +67,7 @@ namespace _64_Decoder
                     return;
                 }
 
-                if (!fileName.ToUpper().EndsWith("DLL"))
+                if (!fileName.ToUpper().EndsWith("JAR"))
                 {
                     ShowMsg("Error: Invalid File Type.");
                     Messenger.Default.Send("", "VIEW");
@@ -96,7 +96,7 @@ namespace _64_Decoder
                     return;
                 }
 
-                if (!fileName.ToUpper().EndsWith("DLL"))
+                if (!fileName.ToUpper().EndsWith("JAR"))
                 {
                     ShowMsg("Error: Invalid File Type.");
                     Messenger.Default.Send("", "VIEW");
